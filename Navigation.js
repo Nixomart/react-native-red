@@ -23,27 +23,14 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 
 //top tabs
 
-const TopTab = createMaterialTopTabNavigator()
+const TopTabs = createMaterialTopTabNavigator()
 
-function MyTopTabs (){
+function MyTop (){
   return(
-    <TopTab.Navigator
-    screenOptions={{
-      tabBarLabelStyle: {
-        textTransform: 'capitalize',
-        fontWeight: 'bold'
-        
-      },
-      tabBarIndicatorStyle:{
-        height: 5,
-        backgroundColor: '#1DA1F2',
-        borderRadius: 5
-      }
-    }}>
-      <TopTab.Screen name="Main" component={Feed} />
-      <TopTab.Screen name="Following" component={Payments} />
-      <TopTab.Screen name="Profile" component={Payments} />
-    </TopTab.Navigator>
+    <TopTabs.Navigator>
+      <TopTabs.Screen name='Main' component={Feed} />
+      <TopTabs.Screen name='Profile' component={Payments} />
+    </TopTabs.Navigator>
   )
 }
 
@@ -129,7 +116,7 @@ function MyTabs() {
         name="Home"
         component={HomeScreen}
       /> */}
-      <Tab.Screen name="Feed" component={MyTopTabs} />
+      <Tab.Screen name="Feed" component={MyTop} />
       <Tab.Screen name="Products" component={Item} />
       <Tab.Screen name="Settings" component={SettingScreen} />
     </Tab.Navigator>
